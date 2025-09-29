@@ -46,7 +46,7 @@ export default function Footer() {
         {/* Contact Info */}
         <div className="footer-contact">
           <h3>Contact</h3>
-          <p>Email: code4dream120@gmail.com</p>
+          <p>Email: navneetxdev@gmail.com</p>
           {/* <p>Phone: </p> */}
         </div>
 
@@ -57,7 +57,7 @@ export default function Footer() {
             <a href="#"><FaFacebookF /></a>
             <a href="#"><FaTwitter /></a>
             <a href="#"><FaInstagram /></a>
-            <a href="#"><FaLinkedinIn /></a>
+            <a href="https://www.linkedin.com/in/navneet-singh-10299a203/"><FaLinkedinIn /></a>
           </div>
         </div>
       </div>
