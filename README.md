@@ -1,6 +1,3 @@
-Here’s a polished and more professional rewrite of your README, keeping it detailed and easy to follow:
-
----
 
 # BabyCode IELTS Homepage
 
