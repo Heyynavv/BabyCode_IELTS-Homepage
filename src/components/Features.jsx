@@ -27,7 +27,7 @@ export default function Features() {
   }, []);
 
   return (
-    <section className="features">
+    <section className="features" id = 'features'>
       {/* Section Heading */}
       <div className="features-header">
         <h2>Why Choose Us?</h2>

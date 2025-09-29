@@ -27,7 +27,7 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="testimonials">
+    <section className="testimonials" id = 'testimonials'>
       <h2>What Our Students Say</h2>
       <div className="testimonial-container">
         {testimonials.map((t, idx) => (

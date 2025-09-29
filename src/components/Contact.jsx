@@ -47,7 +47,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="contact">
+    <section className="contact" id="contact">
       <h2>Get in Touch</h2>
       <p>Have questions? We’d love to hear from you. Fill out the form below 👇</p>
 

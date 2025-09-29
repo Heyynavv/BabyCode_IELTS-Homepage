@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-scroll"; // react-scroll for smooth scrolling
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,10 +17,10 @@ export default function Navbar() {
       <div className="logo">BabyCode IELTS</div>
 
       <nav className={`nav-links ${isOpen ? "open" : ""}`}>
-        <a href="#features">Features</a>
-        <a href="#why">Why Choose Us</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
+        <Link to="features" smooth={true} duration={600} offset={-80} onClick={() => setIsOpen(false)}>Features</Link>
+        <Link to="pricing" smooth={true} duration={600} offset={-80} onClick={() => setIsOpen(false)}>Pricing</Link>
+        <Link to="testimonials" smooth={true} duration={600} offset={-80} onClick={() => setIsOpen(false)}>Testimonials</Link>
+        <Link to="contact" smooth={true} duration={600} offset={-80} onClick={() => setIsOpen(false)}>Contact</Link>
       </nav>
 
       <div className="menu-icon" onClick={() => setIsOpen(!isOpen)}>
