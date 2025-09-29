@@ -41,52 +41,57 @@ body {
 /* ================= NAVBAR ================= */
 
 /* Navbar */
-.navbar {
-  position: fixed;
+ .navbar {
+   position: fixed;
   top:0; left:0;
   width:100%;
   display:flex; justify-content:space-between; align-items:center;
   padding:1rem 2rem;
-  z-index:10000;
+  z-index:1000;
   backdrop-filter: blur(10px);
   background: rgba(255,255,255,0.1);
   transition: all 0.4s ease;
 }
 
-
-.navbar.scrolled {
-  background: rgba(255,255,255,0.85);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-}
-
-.logo {
-  font-size: 1.6rem;
-  font-weight:700;
-  color:#1e293b;
-  cursor:pointer;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
 .logo:hover { color:#06b6d4; transform: scale(1.05); }
 
 .nav-links {
-  display:flex; gap:2rem;
+  display: flex;
+  gap: 2rem;
 }
-.nav-links a {
-  text-decoration:none;
-  font-weight:500;
-  color:#1e293b;
-  position:relative;
-  padding-bottom:4px;
-  transition: all 0.3s ease;
+
+.nav-links a:hover::after { width:100%; }
+.nav-links a:hover { color:#06b6d4; }
+
+.nav-links.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 200px;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 1rem;
 }
-.nav-links a::after {
-  content:"";
-  position:absolute;
-  left:0; bottom:0;
-  width:0%; height:2px;
-  background:#06b6d4;
-  transition: width 0.3s ease;
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  z-index: 1100; /* Make sure it's above nav links */
 }
+
+/* Show hamburger on mobile */
+/* @media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .menu-icon {
+    display: block;
+  }
+} */
+
+
 .nav-links a:hover::after { width:100%; }
 .nav-links a:hover { color:#06b6d4; }
 
