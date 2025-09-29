@@ -1,34 +1,30 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
-
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    section.scrollIntoView({ behavior: "smooth" });
-    setIsOpen(false); // close menu on click
-  };
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav>
-      <h2>BabyCode IELTS</h2>
+    <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
+      <div className="logo">BabyCode IELTS</div>
 
-      {/* Desktop Links */}
-      <div className={`nav-links ${isOpen ? "open" : ""}`}>
-        <a onClick={() => scrollToSection("features")}>Features</a>
-        <a onClick={() => scrollToSection("pricing")}>Pricing</a>
-        <a onClick={() => scrollToSection("faq")}>FAQ</a>
-        <a onClick={() => scrollToSection("contact")}>Contact</a>
-      </div>
+      <nav className={`nav-links ${isOpen ? "open" : ""}`}>
+        <a href="#features">Features</a>
+        <a href="#why">Why Choose Us</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-      {/* Hamburger Icon */}
-      <div className="hamburger" onClick={toggleMenu}>
-        <div className={`bar1 ${isOpen ? "change" : ""}`}></div>
-        <div className={`bar2 ${isOpen ? "change" : ""}`}></div>
-        <div className={`bar3 ${isOpen ? "change" : ""}`}></div>
+      <div className="menu-icon" onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? <FaTimes /> : <FaBars />}
       </div>
-    </nav>
+    </header>
   );
 }
