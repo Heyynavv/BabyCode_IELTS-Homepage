@@ -225,27 +225,101 @@ nav h2 {
 
 /* ================= FEATURES ================= */
 .features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
-  padding: 4rem 3rem;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #f8fafc, #eef2ff);
 }
 
 .feature-card {
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 20px;
+  background: white;
+  border-radius: 16px;
   padding: 2rem;
-  text-align: left;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-  opacity: 0;
-  transform: translateY(50px);
-  transition: transform 0.5s, box-shadow 0.5s;
+  width: 300px;
+  flex: 1 1 280px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0; /* for intersection observer animation */
+  transform: translateY(40px);
 }
 
-.feature-card h3 { color: #1f2937; margin-bottom: 0.5rem; }
-.feature-card p { color: #4b5563; margin-bottom: 1rem; }
-.feature-card ul { list-style: disc inside; color: #4b5563; font-size: 0.9rem; line-height: 1.4; }
-.feature-card li { margin-bottom: 0.5rem; }
+.feature-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #4f46e5, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.feature-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #1e293b;
+}
+
+.feature-card p {
+  color: #475569;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-card li {
+  margin: 0.4rem 0;
+  font-size: 0.9rem;
+  color: #334155;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.feature-card li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #06b6d4;
+  font-size: 0.9rem;
+}
+.features-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.features-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.features-header p {
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
 
 /* ================= TESTIMONIALS ================= */
 .testimonials {
